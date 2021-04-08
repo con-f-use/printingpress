@@ -1,4 +1,4 @@
-name: python tests+artifacts+release
+name: Tests, Artifacts and Release
 
 on:
   pull_request:
@@ -7,6 +7,7 @@ on:
     - main
     tags:
     - "*.*.*"
+    - "v*.*.*"
   release:
 
 jobs:
@@ -38,7 +39,7 @@ jobs:
           msystem: MINGW64
           install: git mingw-w64-x86_64-python mingw-w64-x86_64-python-setuptools
           update: true
-      - run: pip install -U setuptools
+      - run: pip install --upgrade setuptools
         if: matrix.python_version != 'msys2'
       - run: pip install -e ./ pytest
       - run: pytest
@@ -57,11 +58,9 @@ jobs:
         with:
           python-version: ${{ matrix.python_version }}
           architecture: x64
-      - run: pip install -U "setuptools<52"
-      - run: python setup.py bdist_wheel
+      - run: pip install --upgrade setuptools
       - run: python setup.py sdist
       - run: pip install dist/*
-
 
   dist:
     runs-on: ubuntu-latest
