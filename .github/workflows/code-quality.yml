@@ -5,7 +5,6 @@ on:
     paths-ignore:
       - 'docs/**'
   push:
-    branches: [main dev]
     paths-ignore:
       - 'docs/**'
 
@@ -20,9 +19,14 @@ jobs:
 
   dist_upload:
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.event.ref == 'refs/heads/dev'
+    if: github.event.ref == 'refs/heads/dev'
     needs: [pre-commit]
     steps:
+    - uses: actions/checkout@master
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
     - name: Install dependencies
       run: pip install wheel setuptools setuptools_scm
     - name: Build package
