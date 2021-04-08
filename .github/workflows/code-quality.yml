@@ -20,7 +20,7 @@ jobs:
 
   dist_upload:
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.event.ref == 'refs/heads/dev'
+    if: github.event.ref == 'refs/heads/dev'
     needs: [pre-commit]
     steps:
     - name: Install dependencies
