@@ -5,6 +5,8 @@ try:
 except ImportError:
     __version__ = "unknown"
 
+print("testitest")
+
 
 def me(msg="I am printingpress!"):
     print(msg)
