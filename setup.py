@@ -17,6 +17,7 @@ setup(
     long_description_content_type="text/markdown",
     use_scm_version=dict(
         write_to="src/printingpress/version.py",
+        local_scheme="no-local-version",
     ),
     setup_requires=["setuptools_scm"],
     include_package_data=True,
