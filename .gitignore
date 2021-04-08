@@ -1,4 +1,6 @@
-/build
-/dist
+build/
+dist/
+.eggs/
 __pycache__/
 *.egg-info
+src/printingpress/version.py
