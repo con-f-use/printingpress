@@ -1,4 +1,4 @@
-name: python tests+artifacts+release
+name: Tests, Artifacts and Release
 
 on:
   pull_request:
@@ -7,6 +7,7 @@ on:
     - main
     tags:
     - "*.*.*"
+    - "v*.*.*"
   release:
 
 jobs:
@@ -57,7 +58,7 @@ jobs:
         with:
           python-version: ${{ matrix.python_version }}
           architecture: x64
-      - run: pip install -U "setuptools<52"
+      - run: pip install -U setuptools wheel
       - run: python setup.py bdist_wheel
       - run: python setup.py sdist
       - run: pip install dist/*
