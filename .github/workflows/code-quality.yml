@@ -1,0 +1,36 @@
+name: Code Quality
+
+on:
+  pull_request:
+    paths-ignore:
+      - 'docs/**'
+  push:
+    branches: [main dev]
+    paths-ignore:
+      - 'docs/**'
+
+jobs:
+  pre-commit:
+    name: Linting
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+    - uses: pre-commit/action@v2.0.0
+
+  dist_upload:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.event.ref == 'refs/heads/dev'
+    needs: [pre-commit]
+    steps:
+    - name: Install dependencies
+      run: pip install wheel setuptools setuptools_scm
+    - name: Build package
+      run: python setup.py bdist_wheel
+    - name: Publish distribution to Test PyPI
+      uses: pypa/gh-action-pypi-publish@master
+      with:
+        user: __token__
+        password: ${{ secrets.test_pypi_token }}
+        repository_url: https://test.pypi.org/legacy/
+        skip_existing: true
