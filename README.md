@@ -2,6 +2,7 @@ printingpress
 -------------
 
 [![PyPI](http://img.shields.io/pypi/v/printingpress.svg)](https://pypi.python.org/pypi/printingpress)
+[![Docs](https://readthedocs.org/projects/printingpress/badge/?version=latest)](https://printingpress.readthedocs.io)
 [![Tests, Artifacts and Release](https://github.com/con-f-use/printingpress/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/con-f-use/printingpress/actions/workflows/ci.yml)
 
 Shameless name-grap on pypi for a possible future project.

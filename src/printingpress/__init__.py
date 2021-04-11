@@ -1,3 +1,8 @@
+"""A dumb little package.
+
+Printingpress is a dumb little module without much function.
+"""
+
 try:
     from . import version
 
@@ -5,9 +10,11 @@ try:
 except ImportError:
     __version__ = "unknown"
 
-print("testitest")
-
 
 def me(msg="I am printingpress!"):
+    """Print a dumb message
+
+    :param msg: dumb message to print
+    """
     print(msg)
     return msg
