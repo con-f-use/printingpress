@@ -21,8 +21,8 @@ import printingpress
 # -- Project information -----------------------------------------------------
 
 project = "Printingpress"
-copyright = "2021, confus"
-author = "confus"
+copyright = "2021, con-f-use@gmx.net. This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0"
+author = "con-f-use@gmx.net"
 
 # The full version, including alpha/beta/rc tags
 release = printingpress.__version__

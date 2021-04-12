@@ -1,5 +1,5 @@
-Welcome to Printingpress's documentation!
-=========================================
+Welcome to Printingpress' documentation!
+========================================
 
 User Manual
 -----------
@@ -25,3 +25,10 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: License
+
+   license
