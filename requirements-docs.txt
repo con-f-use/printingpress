@@ -1,3 +1,6 @@
+# Requirements for building the documentation
+
+-r requirements.txt
 sphinx
 autodocsumm
 recommonmark>=0.7.1

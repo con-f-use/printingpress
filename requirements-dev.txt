@@ -1,0 +1,8 @@
+# Requirements and commonly used tools for developing this package.
+
+setuptools
+setuptools_scm
+wheel
+-r requirements-docs.txt
+pytest
+pre-commit
