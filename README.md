@@ -1,5 +1,5 @@
-printingpress
--------------
+Printingpress
+=============
 
 [![PyPI](http://img.shields.io/pypi/v/printingpress.svg)](https://pypi.python.org/pypi/printingpress)
 [![Docs](https://readthedocs.org/projects/printingpress/badge/?version=latest)](https://printingpress.readthedocs.io)

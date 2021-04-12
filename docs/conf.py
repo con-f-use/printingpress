@@ -10,12 +10,11 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-import os
-import sys
-import sphinx_rtd_theme
+# import os
+# import sys
+# sys.path.insert(0, os.path.abspath("../src/"))
 
-# sys.path.insert(0, os.path.abspath('.'))
-sys.path.insert(0, os.path.abspath("../src/"))
+import sphinx_rtd_theme
 import printingpress
 
 
@@ -58,8 +57,21 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 #
 # html_theme = "alabaster"
 html_theme = "sphinx_rtd_theme"
+html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+
+html_theme_options = {
+    "logo_only": False,
+    "display_version": True,
+    "prev_next_buttons_location": "bottom",
+    # Toc options
+    "collapse_navigation": True,
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
+
+
+def setup(app):
+    app.add_css_file("css/dark.css")
