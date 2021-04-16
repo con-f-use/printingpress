@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.0"]
+build-backend = "setuptools.build_meta"
+backend-path = ["."]
+
+[project]
+name = "printingpress"
+description = "Shameless name-grap for possible future project"
+readme = "README.md"
+requires-python = ">=3.2"
+license = {file = "LICENSE"}
+keywords = ["printing", "pres", "shell", "tool"]
+authors = [
+  {name = "con-f-use", email = "I@confus.me"}
+]
+maintainers = [
+  {name = "con-f-use", email = "I@confus.me"}
+]
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Topic :: Desktop Environment",
+    "Topic :: System :: Shells",
+    "Topic :: System :: System Shells"
+]
+
+dependencies = [
+]
+
+[project.optional-dependencies]
+test = [
+  "pytest"
+]
+docs = [
+  "sphinx",
+  "autodocsumm",
+  "recommonmark>=0.7.1",
+  "sphinx_rtd_theme"
+]
+
+[project.urls]
+homepage = "github.com/con-f-use/printingpress"
+documentation = "printingpress.readthedocs.org"
+repository = "github.com/con-f-use/printingpress"
+changelog = "github.com/con-f-use/printingpress/commits/main"
+
+[project.scripts]
+printingpress = "printingpress.__init__:me"
+
+[project.gui-scripts]
+
+[project.entry-points."spam.magical"]
+
+[tool.black]
+skip-string-normalization = true
+
+[tool.setuptools_scm]
+write_to = "src/printingpress/version.py"
+version_scheme = "python-simplified-semver"
+local_scheme = "no-local-version"
